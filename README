@@ -1,0 +1,7 @@
+Python script that will downloads all the pictures from an imgur album.
+
+Requirements:
+=======
+
+* requests
+* beautifulsoup4
