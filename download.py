@@ -6,6 +6,10 @@ import requests
 import re
 import os
 
+def usage():
+	print "Usage: python " + sys.argv[0] + " <imgur album>"
+	sys.exit()
+
 def download_img(folder, name):
 	parts = name.split(".")
 	name = parts[0][:-1] + "." + parts[1]
@@ -18,6 +22,9 @@ def download_img(folder, name):
 	file.close()
 	
 if __name__ == '__main__':
+	if len(sys.argv) < 2:
+		usage()
+
 	album = sys.argv[1]
 	album_name = re.findall(r"\/a\/([A-Za-z0-9]{5})", album)[0]
 	folder = album_name + "-files"
